@@ -1,16 +1,19 @@
-namespace StudentExcercises
-{
-  class Excercise
-  {
-    private string _name;
+using System;
+using System.Collections.Generic;
 
-    private string _language;
-    public Excercise(string name, string language)
+namespace StudentExercises
+{
+  public class Exercise
+  {
+
+    public string Name { get; set; }
+    public string Language { get; set; }
+
+    // Constructor
+    public Exercise(string name, string language)
     {
-      {
-        _name = name;
-        _language = language;
-      }
+      Name = name;
+      Language = language;
 
     }
   }
