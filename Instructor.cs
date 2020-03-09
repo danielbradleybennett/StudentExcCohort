@@ -1,22 +1,28 @@
-namespace StudentExcercises
+using System;
+using System.Collections.Generic;
+
+namespace StudentExercises
 {
-  class Instructor
+  public class Instructor
   {
-    private string _firstName;
-    private string _lastName;
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string SlackHandle { get; set; }
+    public string Specialty { get; set; }
 
-    private string _slackHandle;
+    public Cohort Cohort { get; set; }
 
-    private string _cohort;
-
-    private string _specialty;
-
-    public Instructor(string firstName, string lastName, string cohort, string specialty)
+    public Instructor(string firstName, string lastName, string slackHandle, string specialty, Cohort cohort)
     {
-      _firstName = firstName;
-      _lastName = lastName;
-      _cohort = cohort;
-      _specialty = specialty;
+      FirstName = firstName;
+      LastName = lastName;
+      SlackHandle = slackHandle;
+      Specialty = specialty;
+      Cohort = cohort;
+    }
+    public void assignExercise(Exercise exercise, Student student)
+    {
+      student.Exercises.Add(exercise);
     }
 
   }

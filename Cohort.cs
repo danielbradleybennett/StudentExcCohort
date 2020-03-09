@@ -1,16 +1,30 @@
-namespace StudentExcercises
+using System.Collections.Generic;
+
+namespace StudentExercises
 
 {
 
-  class Cohort
+  public class Cohort
   {
-    private int _name;
+    public string Name { get; set; }
 
-    public Cohort(int name)
+    public List<Student> Students = new List<Student>();
+
+    public void addStudent(Student student)
     {
-      _name = name;
+      Students.Add(student);
+    }
+    public List<Instructor> Instructors = new List<Instructor>();
+
+    public void addInstructor(Instructor instructor)
+    {
+      Instructors.Add(instructor);
     }
 
+    // Constructor
+    public Cohort(string name)
+    {
+      Name = name;
+    }
   }
-
 }

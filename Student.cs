@@ -1,32 +1,41 @@
 using System;
 using System.Collections.Generic;
 
-namespace StudentExcercises
+namespace StudentExercises
 {
-  class Student
+  public class Student
   {
 
-    private string _firstName;
-    private string _lastName;
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string SlackHandle { get; set; }
 
-    private string _slackHandle;
+    public Cohort Cohort { get; set; }
 
-    private int _cohort;
-
-    public List<Excercise> Excercises = new List<Excercise>();
-    public void addExcercise(Excercise excercise)
+    public List<Exercise> Exercises = new List<Exercise>();
+    public void addExercise(Exercise exercise)
     {
-      Excercises.Add(excercise);
+      Exercises.Add(exercise);
+    }
+    public void Description()
+    {
+      Console.WriteLine(this.FirstName + " " + this.LastName);
+      Console.WriteLine($"Slack Handle: {this.SlackHandle}");
+      Console.WriteLine($"Cohort: {this.Cohort.Name}");
+      foreach (Exercise exercise in this.Exercises)
+      {
+        Console.WriteLine($"Currently working on {exercise.Name}");
+      }
+      Console.WriteLine($"-------------------");
     }
 
-    public Student(string firstName, string lastName, int cohort, string slackHandle)
+    public Student(string firstName, string lastName, string slackHandle, Cohort cohort)
     {
-      _firstName = firstName;
-      _lastName = lastName;
-      _cohort = cohort;
-      _slackHandle = slackHandle;
+      FirstName = firstName;
+      LastName = lastName;
+      SlackHandle = slackHandle;
+      Cohort = cohort;
 
     }
-
   }
 }
